@@ -1,0 +1,63 @@
+package com.rct.payroll.core.model.dto.employer
+
+import com.rct.payroll.core.model.dto.address.City
+import java.time.LocalDateTime
+import java.util.UUID
+import java.util.UUID.randomUUID
+
+data class AddressEmployer(
+    val id: UUID = randomUUID(),
+    val streetType: StreetType,
+    var street: String,
+    var number: Number,
+    val city: City,
+    var zipCode: String,
+    val employerId: UUID,
+    var active : Boolean = true,
+    val createdAt: LocalDateTime,
+    var updatedAt: LocalDateTime
+)
+
+enum class StreetType(val description: String) {
+    AIRPORT(description = "Airport"),
+    ALLEY(description = "Alley"),
+    ALLOTMENT(description = "Allotment"),
+    AREA(description = "Area"),
+    AVENUE(description = "Avenue"),
+    BLOCK(description = "Block"),
+    CATWALK(description = "Catwalk"),
+    CLOVER(description = "Clover"),
+    CONDOMINIUM(description = "Condominium"),
+    COLOGNE(description = "Cologne"),
+    CORE(description = "Core"),
+    COURTYARD(description = "Courtyard"),
+    DISTRICT(description = "District"),
+    ESPLANADE(description = "Esplanade"),
+    FAIR(description = "Fair"),
+    FARM(description = "Farm"),
+    FIELD(description = "Field"),
+    GARDEN(description = "Garden"),
+    HIGHWAY(description = "Highway"),
+    HILL(description = "Hill"),
+    LAGOON(description = "Lagoon"),
+    LAKE(description = "Lake"),
+    NOOK(description = "Nook"),
+    PARK(description = "Park"),
+    PATH(description = "Path"),
+    PLACE(description = "Place"),
+    PLATTER(description = "Platter"),
+    RESIDENTIAL(description = "Residential"),
+    ROAD(description = "Road"),
+    SEASON(description = "Season"),
+    SECTOR(description = "Sector"),
+    SET(description = "Set"),
+    SHANTYTOWN(description = "Shantytown"),
+    SLOPE(description = "Slope"),
+    SQUARE(description = "Square"),
+    STRETCH(description = "Stretch"),
+    VALLEY(description = "Valley"),
+    VIA(description = "Via"),
+    VIADUCT(description = "Viaduct"),
+    VILLAGE(description = "Village"),
+    WIDE(description = "Wide")
+}
